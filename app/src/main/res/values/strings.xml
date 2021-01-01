@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name" translatable="false">Clean BoilerPlate</string>
+
+    <string name="ok">OK</string>
+    <string name="cancel">Cancel</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+
+    <!-- Error messages -->
+    <string name="error">Error</string>
+    <string name="spotify_unauthorized">Your Spotify session is expired. You need to login again.</string>
+
+    <!-- Menu -->
+    <string name="migrate">Migrate</string>
+    <string name="select">Select</string>
+    <string name="select_all">Select All</string>
+
+    <!-- spotify -->
+    <string name="login_to_spotify">Spotify Login</string>
+    <string name="select_playlist">You must select one or more playlists</string>
+</resources>

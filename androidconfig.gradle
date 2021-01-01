@@ -1,0 +1,47 @@
+android {
+    def globalConfiguration = rootProject.extensions.getByName("ext")
+
+    compileSdkVersion globalConfiguration["androidCompileSdkVersion"]
+    buildToolsVersion globalConfiguration["androidBuildToolsVersion"]
+
+    defaultConfig {
+        minSdkVersion globalConfiguration["androidMinSdkVersion"]
+        targetSdkVersion globalConfiguration["androidTargetSdkVersion"]
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    compileOptions {
+        sourceCompatibility = 1.8
+        targetCompatibility = 1.8
+    }
+
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+
+    dataBinding {
+        enabled = true
+        enabledForTests = true
+    }
+
+    // Always show the result of every unit test when running via command line, even if it passes.
+    testOptions.unitTests {
+        includeAndroidResources = true
+        returnDefaultValues = true
+    }
+
+    testOptions.unitTests.all {
+        jvmArgs "-XX:+UnlockExperimentalVMOptions", "-XX:+UseCGroupMemoryLimitForHeap"
+    }
+}
+
+dependencies {
+    // unit tests
+    testImplementation rootProject.ext.unitTestDependencies.androidxJunit
+    testImplementation rootProject.ext.unitTestDependencies.mockito
+
+    // android tests
+    androidTestImplementation rootProject.ext.androidTestDependencies.junit
+    androidTestImplementation rootProject.ext.androidTestDependencies.mockito
+    androidTestImplementation rootProject.ext.androidTestDependencies.espressoCore
+}

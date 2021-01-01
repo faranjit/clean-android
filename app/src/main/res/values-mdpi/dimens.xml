@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Button dimensions -->
+    <dimen name="default_button_margin">8dp</dimen>
+    <dimen name="default_button_text_size">12sp</dimen>
+</resources>

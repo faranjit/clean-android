@@ -1,0 +1,19 @@
+<resources>
+    <string name="ok">Tamam</string>
+    <string name="cancel">İptal</string>
+    <string name="yes">Evet</string>
+    <string name="no">Hayır</string>
+
+    <!-- Error messages -->
+    <string name="error">Hata</string>
+    <string name="spotify_unauthorized">Spotify oturumunuzun süresi doldu. Tekrar giriş yapmanız gerekiyor.</string>
+
+    <!-- Menu -->
+    <string name="migrate">Taşı</string>
+    <string name="select">Seç</string>
+    <string name="select_all">Hepsini Seç</string>
+
+    <!-- spotify -->
+    <string name="login_to_spotify">Spotify\'a Giriş Yap</string>
+    <string name="select_playlist">Bir ya da daha fazla çalma listesi seçmelisiniz.</string>
+</resources>

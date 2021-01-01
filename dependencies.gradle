@@ -1,0 +1,159 @@
+ext {
+    // app version
+    appVersionCode = 1
+    appVersionName = "1.0"
+
+    // android
+    androidMinSdkVersion = 23
+    androidTargetSdkVersion = 29
+    androidCompileSdkVersion = 29
+    androidBuildToolsVersion = "29.0.2"
+
+    // versions
+    //
+    // android
+    androidxCoreVersion = '1.2.0'
+    androidxAppcompatVersion = '1.1.0'
+    androidxConstraintlayoutVersion = '1.1.3'
+    androidxCoordinatorLayoutVersion = '1.1.0'
+    androidxRecyclerviewVersion = '1.1.0'
+    androidxPagingVersion = '2.1.2'
+    androidxLifecycleVersion = '2.2.0'
+    androidxLiveDataVersion = '2.2.0'
+    activityKtxVersion = "1.1.0"
+    materialVersion = "1.0.0"
+
+    // coroutines
+    coroutinesAndroidVersion = "1.3.5"
+
+    // dagger
+    daggerVersion = "2.27"
+
+    // okhttp
+    okHttpVersion = "4.4.1"
+
+    // retrofit
+    retrofitVersion = "2.8.1"
+
+    // glide
+    glideVersion = '4.11.0'
+
+    // moshi
+    moshiVersion = "1.9.2"
+
+    // timber
+    timberVersion = '4.5.1'
+
+    // spotify
+    spotifyAuthVersion = '1.1.0'
+
+    // easy permissions
+    easyPermissionsVersion = '3.0.0'
+
+    // test
+    junitVersion = "4.13"
+    mockitoVersion = "3.3.3"
+    hamcrestVersion = "1.3"
+    roboElectricVersion = "4.3.1"
+    coroutinesTestVersion = "1.3.5"
+    androidxTestVersion = "1.2.0"
+    androidArchCoreTestVersion = "2.1.0"
+    androidxJunitTestVersion = "1.1.1"
+    espressoVersion = "3.2.0"
+    truthVersion = "1.0.1"
+    dexMakerVersion = "2.19.0"
+
+    // unit test
+    unitTestDependencies = [
+            junit           : "junit:junit:$junitVersion",
+            androidxJunit   : "androidx.test.ext:junit:$androidxJunitTestVersion",
+            mockito         : "org.mockito:mockito-core:$mockitoVersion",
+            hamcrest        : "org.hamcrest:hamcrest-all:$hamcrestVersion",
+            androidArchCore : "androidx.arch.core:core-testing:$androidArchCoreTestVersion",
+            roboElectric    : "org.robolectric:robolectric:$roboElectricVersion",
+            coroutine       : "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutinesTestVersion",
+            androidxTestCore: "androidx.test:core:$androidxTestVersion",
+            androidxTestKtx : "androidx.test:core-ktx:$androidxTestVersion",
+            kotlinx         : "org.jetbrains.kotlinx:kotlinx-coroutines-test:$coroutinesTestVersion",
+            truth           : "com.google.truth:truth:$truthVersion"
+    ]
+
+    // android test
+    androidTestDependencies = [
+            junit          : "junit:junit:$junitVersion",
+            mockito        : "org.mockito:mockito-core:$mockitoVersion",
+            kotlinx        : "org.jetbrains.kotlinx:kotlinx-coroutines-test:$coroutinesTestVersion",
+            androidxJunit  : "androidx.test.ext:junit:$androidxJunitTestVersion",
+            espressoCore   : "androidx.test.espresso:espresso-core:$espressoVersion",
+            espressoContrib: "androidx.test.espresso:espresso-contrib:$espressoVersion",
+            androidArchCore: "androidx.arch.core:core-testing:$androidArchCoreTestVersion",
+            dexMaker       : "com.linkedin.dexmaker:dexmaker-mockito:$dexMakerVersion"
+    ]
+
+    // androidx
+    androidxDependencies = [
+            core             : "androidx.core:core-ktx:$androidxCoreVersion",
+            appcompat        : "androidx.appcompat:appcompat:$androidxAppcompatVersion",
+            constraintlayout : "androidx.constraintlayout:constraintlayout:$androidxConstraintlayoutVersion",
+            recyclerview     : "androidx.recyclerview:recyclerview:$androidxRecyclerviewVersion",
+            coordinatorLayout: "androidx.coordinatorlayout:coordinatorlayout:$androidxCoordinatorLayoutVersion",
+            paging           : "androidx.paging:paging-runtime:$androidxPagingVersion",
+            activityKtx      : "androidx.activity:activity:$activityKtxVersion",
+    ]
+
+    coreDependencies = [
+            lifeCycleExt        : "androidx.lifecycle:lifecycle-extensions:$androidxLifecycleVersion",
+            viewModel           : "androidx.lifecycle:lifecycle-viewmodel-ktx:$androidxLifecycleVersion",
+            liveData            : "androidx.lifecycle:lifecycle-livedata-ktx:$androidxLiveDataVersion",
+            coroutine           : "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutinesAndroidVersion",
+            coroutineAndroid    : "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutinesAndroidVersion",
+            daggerCompiler      : "com.google.dagger:dagger-compiler:$daggerVersion",
+            dagger              : "com.google.dagger:dagger:$daggerVersion",
+            daggerAndroid       : "com.google.dagger:dagger-android:$daggerVersion",
+            daggerAndroidSupport: "com.google.dagger:dagger-android-support:$daggerVersion",
+            daggerProcessor     : "com.google.dagger:dagger-android-processor:$daggerVersion",
+            timber              : "com.jakewharton.timber:timber:$timberVersion"
+    ]
+
+    appDependencies = [
+            lifeCycleExt        : "androidx.lifecycle:lifecycle-extensions:$androidxLifecycleVersion",
+            viewModel           : "androidx.lifecycle:lifecycle-viewmodel-ktx:$androidxLifecycleVersion",
+            liveData            : "androidx.lifecycle:lifecycle-livedata-ktx:$androidxLiveDataVersion",
+            okHttp              : "com.squareup.okhttp3:okhttp:$okHttpVersion",
+            okHttpLogger        : "com.squareup.okhttp3:logging-interceptor:$okHttpVersion",
+            retrofit            : "com.squareup.retrofit2:retrofit:$retrofitVersion",
+            moshiKotlin         : "com.squareup.moshi:moshi-kotlin:$moshiVersion",
+            moshiConverter      : "com.squareup.retrofit2:converter-moshi:$retrofitVersion",
+            daggerCompiler      : "com.google.dagger:dagger-compiler:$daggerVersion",
+            dagger              : "com.google.dagger:dagger:$daggerVersion",
+            daggerAndroid       : "com.google.dagger:dagger-android:$daggerVersion",
+            daggerAndroidSupport: "com.google.dagger:dagger-android-support:$daggerVersion",
+            daggerProcessor     : "com.google.dagger:dagger-android-processor:$daggerVersion",
+            glide               : "com.github.bumptech.glide:glide:$glideVersion",
+            glideOkhttp         : "com.github.bumptech.glide:okhttp3-integration:$glideVersion",
+            glideCompiler       : "com.github.bumptech.glide:compiler:$glideVersion",
+            timber              : "com.jakewharton.timber:timber:$timberVersion",
+            material            : "com.google.android.material:material:$materialVersion",
+            easyPermissions     : "pub.devrel:easypermissions:$easyPermissionsVersion"
+    ]
+
+    domainDependencies = [
+            moshiKotlin     : "com.squareup.moshi:moshi-kotlin:$moshiVersion",
+            moshiConverter  : "com.squareup.retrofit2:converter-moshi:$retrofitVersion",
+            retrofit        : "com.squareup.retrofit2:retrofit:$retrofitVersion",
+            coroutine       : "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutinesAndroidVersion",
+            coroutineAndroid: "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutinesAndroidVersion",
+            dagger          : "com.google.dagger:dagger:$daggerVersion",
+    ]
+
+    dataDependencies = [
+            coroutine       : "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutinesAndroidVersion",
+            coroutineAndroid: "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutinesAndroidVersion",
+            retrofit        : "com.squareup.retrofit2:retrofit:$retrofitVersion"
+    ]
+
+    // spotify
+    spotifyDependencies = [
+            auth: "com.spotify.android:auth:$spotifyAuthVersion"
+    ]
+}

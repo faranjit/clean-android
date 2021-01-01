@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Button dimensions -->
+    <dimen name="default_button_height">50dp</dimen>
+    <dimen name="default_button_margin">30dp</dimen>
+    <dimen name="default_button_padding">15dp</dimen>
+    <dimen name="default_button_text_size">20sp</dimen>
+
+    <dimen name="text_small_size">12sp</dimen>
+    <dimen name="text_medium_size">16sp</dimen>
+    <dimen name="text_normal_size">20sp</dimen>
+    <dimen name="text_big_size">24sp</dimen>
+</resources>

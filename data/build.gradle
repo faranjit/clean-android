@@ -1,0 +1,22 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+
+apply from: "$rootProject.projectDir/androidconfig.gradle"
+
+dependencies {
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+
+    implementation project(":core")
+    implementation project(":domain")
+
+    // coroutines
+    implementation rootProject.ext.dataDependencies.coroutine
+    implementation rootProject.ext.dataDependencies.coroutineAndroid
+
+    // dagger
+    implementation rootProject.ext.coreDependencies.dagger
+
+    // retrofit
+    implementation rootProject.ext.domainDependencies.retrofit
+}

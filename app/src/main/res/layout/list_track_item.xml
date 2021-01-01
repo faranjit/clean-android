@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="track"
+            type="com.faranjit.clean.domain.spotify.model.SpotifyTrack" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:elevation="5dp"
+        android:padding="@dimen/default_button_padding">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imgTrack"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:transitionName="@{track.name}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:playlistImage="@{track.album.images}"
+            tools:src="@drawable/sample" />
+
+        <TextView
+            android:id="@+id/txtTrackName"
+            style="@style/TextView"
+            android:layout_marginStart="@dimen/default_button_padding"
+            android:text="@{track.name}"
+            app:layout_constraintStart_toEndOf="@id/imgTrack"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Haydarin narin nanay" />
+
+        <TextView
+            android:id="@+id/txtTrackArtists"
+            style="@style/TextView"
+            android:layout_marginStart="@dimen/default_button_padding"
+            android:textColor="@color/gray"
+            android:textSize="@dimen/text_medium_size"
+            app:layout_constraintStart_toEndOf="@id/imgTrack"
+            app:layout_constraintTop_toBottomOf="@id/txtTrackName"
+            tools:text="In Flames" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

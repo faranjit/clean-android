@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="playlist"
+            type="com.faranjit.clean.domain.spotify.model.SpotifyPlaylistItem" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="5dp"
+        android:elevation="5dp">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imgPlaylist"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:transitionName="@{playlist.name}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:playlistImage="@{playlist.images}"
+            tools:src="@drawable/sample" />
+
+        <TextView
+            style="@style/TextView"
+            android:layout_gravity="bottom|center_horizontal"
+            android:layout_marginBottom="10dp"
+            android:text="@{playlist.name}"
+            android:textSize="@dimen/text_medium_size"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            tools:text="Metal Ballads" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

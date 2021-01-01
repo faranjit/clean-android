@@ -1,0 +1,87 @@
+apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'kotlin-android-extensions'
+
+apply from: "$rootProject.projectDir/androidconfig.gradle"
+
+android {
+    def globalConfiguration = rootProject.extensions.getByName("ext")
+
+    compileSdkVersion globalConfiguration["androidCompileSdkVersion"]
+
+    defaultConfig {
+        applicationId 'com.faranjit.clean'
+        versionCode globalConfiguration["appVersionCode"]
+        versionName globalConfiguration["appVersionName"]
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        debug {
+            applicationIdSuffix ".dev"
+            minifyEnabled false
+        }
+
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    packagingOptions {
+        exclude 'META-INF/DEPENDENCIES'
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+
+    implementation project(':core')
+    implementation project(':domain')
+    implementation project(':data')
+
+    implementation rootProject.ext.androidxDependencies.core
+    implementation rootProject.ext.androidxDependencies.appcompat
+    implementation rootProject.ext.androidxDependencies.constraintlayout
+    implementation rootProject.ext.androidxDependencies.coordinatorLayout
+    implementation rootProject.ext.androidxDependencies.recyclerview
+    implementation rootProject.ext.androidxDependencies.activityKtx
+
+    implementation rootProject.ext.appDependencies.material
+    implementation rootProject.ext.appDependencies.easyPermissions
+
+    // okhttp
+    implementation rootProject.ext.appDependencies.okHttpLogger
+
+    // retrofit
+    implementation rootProject.ext.appDependencies.retrofit
+
+    // moshi
+    implementation rootProject.ext.appDependencies.moshiKotlin
+    implementation rootProject.ext.appDependencies.moshiConverter
+
+    // Glide
+    implementation rootProject.ext.appDependencies.glide
+    implementation rootProject.ext.appDependencies.glideOkhttp
+    kapt rootProject.ext.appDependencies.glideCompiler
+
+    // lifecycle and livedata
+    implementation rootProject.ext.appDependencies.lifeCycleExt
+    implementation rootProject.ext.appDependencies.viewModel
+    implementation rootProject.ext.appDependencies.liveData
+
+    // dagger
+    implementation rootProject.ext.appDependencies.dagger
+    implementation rootProject.ext.appDependencies.daggerAndroid
+    implementation rootProject.ext.appDependencies.daggerAndroidSupport
+    kapt rootProject.ext.appDependencies.daggerCompiler
+    kapt rootProject.ext.appDependencies.daggerProcessor
+
+    // timber
+    implementation rootProject.ext.appDependencies.timber
+
+    // spotify
+    implementation rootProject.ext.spotifyDependencies.auth
+}

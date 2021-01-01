@@ -1,0 +1,63 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+apply plugin: 'kotlin-android-extensions'
+
+apply from: "$rootProject.projectDir/androidconfig.gradle"
+
+android {
+    buildTypes {
+        debug {
+            minifyEnabled false
+            testCoverageEnabled true
+        }
+
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    implementation rootProject.ext.androidxDependencies.core
+    implementation rootProject.ext.androidxDependencies.appcompat
+    implementation rootProject.ext.androidxDependencies.constraintlayout
+    implementation rootProject.ext.androidxDependencies.paging
+    implementation rootProject.ext.androidxDependencies.recyclerview
+
+    // lifecycle and livedata
+    implementation rootProject.ext.coreDependencies.lifeCycleExt
+    implementation rootProject.ext.coreDependencies.viewModel
+    implementation rootProject.ext.coreDependencies.liveData
+
+    // coroutines
+    implementation rootProject.ext.coreDependencies.coroutine
+    implementation rootProject.ext.coreDependencies.coroutineAndroid
+
+    // dagger
+    implementation rootProject.ext.coreDependencies.dagger
+    implementation rootProject.ext.coreDependencies.daggerAndroid
+    implementation rootProject.ext.coreDependencies.daggerAndroidSupport
+    kapt rootProject.ext.coreDependencies.daggerCompiler
+    kapt rootProject.ext.coreDependencies.daggerProcessor
+
+    // timber
+    implementation rootProject.ext.coreDependencies.timber
+
+    // unit test
+    testImplementation rootProject.ext.unitTestDependencies.androidArchCore
+    testImplementation rootProject.ext.unitTestDependencies.coroutine
+    testImplementation rootProject.ext.unitTestDependencies.androidxTestKtx
+    testImplementation rootProject.ext.unitTestDependencies.kotlinx
+    testImplementation rootProject.ext.unitTestDependencies.truth
+
+    // android tests
+    androidTestImplementation rootProject.ext.androidTestDependencies.androidArchCore
+    androidTestImplementation rootProject.ext.androidTestDependencies.kotlinx
+    androidTestImplementation rootProject.ext.androidTestDependencies.dexMaker
+    androidTestImplementation rootProject.ext.androidTestDependencies.androidxJunit
+}

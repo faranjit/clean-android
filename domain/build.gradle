@@ -1,0 +1,33 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-kapt'
+
+apply from: "$rootProject.projectDir/androidconfig.gradle"
+
+dependencies {
+    implementation fileTree(dir: "libs", include: ["*.jar"])
+
+    implementation project(":core")
+    testImplementation project(":core")
+
+    // moshi
+    implementation rootProject.ext.domainDependencies.moshiKotlin
+    implementation rootProject.ext.domainDependencies.moshiConverter
+
+    // retrofit
+    implementation rootProject.ext.domainDependencies.retrofit
+
+    // coroutines
+    implementation rootProject.ext.domainDependencies.coroutine
+    implementation rootProject.ext.domainDependencies.coroutineAndroid
+
+    // dagger
+    implementation rootProject.ext.domainDependencies.dagger
+
+    // unit test
+    testImplementation rootProject.ext.unitTestDependencies.androidArchCore
+    testImplementation rootProject.ext.unitTestDependencies.coroutine
+    testImplementation rootProject.ext.unitTestDependencies.androidxTestKtx
+    testImplementation rootProject.ext.unitTestDependencies.kotlinx
+    testImplementation rootProject.ext.unitTestDependencies.truth
+}
